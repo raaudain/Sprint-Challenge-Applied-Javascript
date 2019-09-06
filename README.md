@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+* The Document Object Model connects web pages to scripts or programming languages.
+
 2. What is an event?
+
+* An event is sent to notify code that something happened.
 
 3. What is an event listener?
 
+* An event listener waits for something to happen then runs a code.
+
 4. Why would we convert a NodeList into an Array?
 
+* To make it possible to loop over and display data from a NodeList.
+
 5. What is a component?
+
+* A component is a reusable piece of code used for styling and functionality.
 
 ### Git Set up
 
