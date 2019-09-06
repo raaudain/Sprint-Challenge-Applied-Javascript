@@ -21,23 +21,36 @@
 
 const cards = document.querySelector(".cards-container");
 
-const topicsArray = [];
-
-
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then(response => {
-       console.log(response.data.articles.bootstrap.headline);
-       
-       });
-       //cards.appendChild(createCards(response.data.articles.bott))
-       
-    //})
+       console.log(response);
+        
+       response.data.articles.javascript.forEach(article => {
+           cards.appendChild(createCards(article));
+       })
+
+       response.data.articles.technology.forEach(article => {
+            cards.appendChild(createCards(article));
+        })
+
+        response.data.articles.node.forEach(article => {
+            cards.appendChild(createCards(article));
+        })
+
+        response.data.articles.jquery.forEach(article => {
+            cards.appendChild(createCards(article));
+        })
+
+        response.data.articles.bootstrap.forEach(article => {
+            cards.appendChild(createCards(article));
+        })
+
+    })
 
     .catch(error => {
         console.log("Something went wrong --> ", error);
-    })
+    });
         
-
 
 function createCards(data){
 
@@ -53,8 +66,8 @@ function createCards(data){
     author.classList.add("author");
     imgContainer.classList.add("img-container");
 
-    header.textContent = `${data.headline}`;
-    img.src = `${data.authorPhoto}`;
+    headline.textContent = data.headline;
+    img.src = data.authorPhoto;
     authorName.textContent = `By ${data.authorName}`;
 
     card.appendChild(headline);
