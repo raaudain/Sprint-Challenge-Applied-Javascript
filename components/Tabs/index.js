@@ -15,7 +15,7 @@ const tabArray = ["All"]
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
     .then(response => {
         
-        console.log(response);
+        //console.log(response);
         response.data.topics.forEach(element => {
             if (element === "node.js")
                 tabArray.splice(3,0,element);
